@@ -4,7 +4,8 @@
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    __.prototype = b.prototype;
+    d.prototype = new __();
 };
 ;
 var ARC_60 = 360 / 60, ARC_12 = 360 / 12;
@@ -341,6 +342,9 @@ var HandsClock = (function (_super) {
             'alignment-baseline': 'middle'
         });
     }
+    HandsClock.prototype.angler = function () {
+        return toAngles;
+    };
     HandsClock.prototype.tick = function (h, m, s) {
         _super.prototype.tick.call(this, h, m, s);
         linear(this.rotateS(this.oldseconds), this.seconds);
