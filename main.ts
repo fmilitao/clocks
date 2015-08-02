@@ -436,6 +436,10 @@ class HandsClock extends ClockWork implements Clock {
 
     }
 
+    angler() {
+        return toAngles;
+    }
+
     tick(h: number, m: number, s: number) {
       super.tick(h, m, s);
 
