@@ -330,7 +330,7 @@ var HandsClock = (function (_super) {
         this.rotateH = makeTransformationFunction(this.hours.getBBox());
         this.minutes = s.path(HOURS);
         this.rotateM = makeTransformationFunction(this.minutes.getBBox());
-        this.seconds = s.rect(x, y - 50, 5, RADIUS, 2, 2);
+        this.seconds = s.rect(x, y - (RADIUS - 50), 5, RADIUS, 2, 2);
         s.circle(x, y, 10).attr({
             fill: 'white'
         });
